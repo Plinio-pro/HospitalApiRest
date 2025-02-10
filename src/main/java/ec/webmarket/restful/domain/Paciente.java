@@ -1,5 +1,7 @@
 package ec.webmarket.restful.domain;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,7 +36,7 @@ public class Paciente {
 	private String email;
 	
 	@Column(nullable = false, updatable = false)
-	private String fechaNacimiento;
+	private LocalDate fechaNacimiento;
 	
 	@Column(nullable = false, unique = false)
 	private String direccion;
