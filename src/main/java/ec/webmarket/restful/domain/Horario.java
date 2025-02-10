@@ -37,4 +37,5 @@ public class Horario {
     @OneToOne
     @JoinColumn(name = "odontologo_id", nullable = false)
     private Odontologo odontologo;
+    
 }

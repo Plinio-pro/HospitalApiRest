@@ -42,4 +42,5 @@ public class Cita {
 	@Column(nullable = false, unique = true)
 	private String motivo;
 	
+	
 }
