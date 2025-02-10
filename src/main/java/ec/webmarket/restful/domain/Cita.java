@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,14 +22,17 @@ public class Cita {
 	@Column(updatable = false, nullable = false)
 	private Long id;
 	
-	@Column(nullable = false, unique = true)
-	private String RELACIONPACIENTEMODIFICAR;
+    @OneToOne
+    @JoinColumn(name = "paciente_id", nullable = false)
+    private Paciente paciente;
 	
-	@Column(nullable = false, unique = true)
-	private String RELACIONODONTOLOGOMODIFICAR;
+    @OneToOne
+    @JoinColumn(name = "odontologo_id", nullable = false)
+    private Odontologo odontologo;
 
-	@Column(nullable = false, unique = true)
-	private String RELACIONHORARIOMODIFICAR;
+    @OneToOne
+    @JoinColumn(name = "horario_id", nullable = false)
+    private Horario horario;
 	
 	@Column(nullable = false, unique = true)
 	private LocalDate fecha;

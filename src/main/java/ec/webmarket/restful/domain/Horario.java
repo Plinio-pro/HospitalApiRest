@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,24 +17,24 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Horario {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(updatable = false, nullable = false)
-	private Long id;
-	
-	@Column(nullable = false, unique = true)
-	private LocalDate fecha;
-	
-	@Column(nullable = false, unique = true)
-	private LocalDateTime horaInicio;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
+    private Long id;
 
-	@Column(nullable = false, unique = true)
-	private LocalDateTime horafinal;
-	
-	@Column(nullable = false, unique = true)
-	private Boolean disponibilidad;
-	
-	@Column(nullable = false, unique = true)
-	private String RELACIONODONTOLOGOMODIFICAR;
-	
+    @Column(nullable = false)
+    private LocalDate fecha;
+
+    @Column(nullable = false)
+    private LocalDateTime horaInicio;
+
+    @Column(nullable = false)
+    private LocalDateTime horafinal;
+
+    @Column(nullable = false)
+    private Boolean disponibilidad;
+
+    @OneToOne
+    @JoinColumn(name = "odontologo_id", nullable = false)
+    private Odontologo odontologo;
 }
