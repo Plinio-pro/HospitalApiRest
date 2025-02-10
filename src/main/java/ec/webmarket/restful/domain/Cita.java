@@ -1,6 +1,5 @@
 package ec.webmarket.restful.domain;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -30,10 +29,7 @@ public class Cita {
 	private String RELACIONHORARIOMODIFICAR;
 	
 	@Column(nullable = false, unique = true)
-	private LocalDate fecha;
-	
-	@Column(nullable = false, unique = true)
-	private LocalDateTime Hora;
+	private LocalDateTime fechayHora;
 	
 	@Column(nullable = false, unique = true)
 	private String estado;
