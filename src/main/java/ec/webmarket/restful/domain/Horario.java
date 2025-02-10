@@ -1,7 +1,7 @@
 package ec.webmarket.restful.domain;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,10 +26,10 @@ public class Horario {
     private LocalDate fecha;
 
     @Column(nullable = false)
-    private LocalDateTime horaInicio;
+    private LocalTime horaInicio;
 
     @Column(nullable = false)
-    private LocalDateTime horafinal;
+    private LocalTime horafinal;
 
     @Column(nullable = false)
     private Boolean disponibilidad;
