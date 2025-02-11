@@ -11,6 +11,8 @@ import ec.webmarket.restful.domain.Odontologo;
 
 public interface HorarioRepository extends JpaRepository<Horario, Long>{
 	
+	List<Horario> findByOdontologo_Id(Long odontologoId);
+	
 	List<Horario> findByFecha(LocalDate fecha);
 	
 	List<Horario> findByHoraInicio(LocalTime horaInicio);
