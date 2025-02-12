@@ -1,5 +1,6 @@
 package ec.webmarket.restful.persistence;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,7 +19,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long>{
 	
 	List<Paciente> findByEmail(String email);
 	
-	List<Paciente> findByFechaNacimiento(String fechaNacimiento);
+	List<Paciente> findByFechaNacimiento(LocalDate fechaNacimiento);
 	
 	List<Paciente> findByDireccion(String direccion);
 }
