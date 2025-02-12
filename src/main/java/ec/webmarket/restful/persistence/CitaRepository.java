@@ -12,15 +12,15 @@ import ec.webmarket.restful.domain.Paciente;
 
 public interface CitaRepository extends JpaRepository<Cita, Long>{
 	
-	List<Cita> finByPaciente(Paciente paciente);
+	List<Cita> findByPaciente(Paciente paciente);
 	
-	List<Cita> finByOdontologo(Odontologo Odontologo);
+	List<Cita> findByOdontologo(Odontologo odontologo);
 	
-	List<Cita> finByHorario(Horario Horario);
+	List<Cita> findByHorario(Horario horario);
 	
-	List<Cita> finByFechayHora(LocalDateTime FechayHora);
+	List<Cita> findByFechayHora(LocalDateTime FechayHora);
 	
-	List<Cita> finByEstado(String Estado);
+	List<Cita> findByEstado(String Estado);
 	
-	List<Cita> finByMotivo(String Motivo);
+	List<Cita> findByMotivo(String Motivo);
 } 
