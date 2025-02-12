@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,11 +22,11 @@ public class Cita {
 	@Column(updatable = false, nullable = false)
 	private Long id;
 	
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 	
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "odontologo_id", nullable = false)
     private Odontologo odontologo;
 
