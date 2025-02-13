@@ -3,6 +3,8 @@ package ec.webmarket.restful.domain;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,9 +27,11 @@ public class Horario {
     @Column(nullable = false)
     private LocalDate fecha;
 
+    @JsonFormat(pattern = "HH:mm")
     @Column(nullable = false)
     private LocalTime horaInicio;
 
+    @JsonFormat(pattern = "HH:mm")
     @Column(nullable = false)
     private LocalTime horafinal;
 

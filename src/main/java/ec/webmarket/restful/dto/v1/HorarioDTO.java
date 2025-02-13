@@ -1,6 +1,7 @@
 package ec.webmarket.restful.dto.v1;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import lombok.Data;
 
@@ -9,8 +10,8 @@ public class HorarioDTO {
 	
 	private Long id;
 	private LocalDate fecha;
-	private String horaInicio;
-	private String horafinal;
+	private LocalTime horaInicio;
+	private LocalTime horafinal;
 	private Boolean disponibilidad;
 	private OdontologoDTO Odontologo;
 	

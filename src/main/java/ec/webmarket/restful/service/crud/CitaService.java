@@ -31,19 +31,14 @@ public class CitaService extends GenericCrudServiceImpl<Cita, CitaDTO> {
         return repository.findById(dto.getId());
     }
 
-    public List<CitaDTO> findByPaciente(Paciente paciente) {
-        return repository.findByPaciente(paciente)
-                        .stream()
-                        .map(this::mapToDto)
-                        .collect(Collectors.toList());
+    public List<Cita> findByPaciente(Long pacienteId) {
+        return repository.findByPacienteId(pacienteId);
     }
-
-    public List<CitaDTO> findByOdontologo(Odontologo odontologo) {
-        return repository.findByOdontologo(odontologo)
-                        .stream()
-                        .map(this::mapToDto)
-                        .collect(Collectors.toList());
+    
+    public List<Cita> findByOdontologo(Long odontologoId) {
+        return repository.findByOdontologoId(odontologoId);
     }
+    
 
     public List<CitaDTO> findByHorario(Horario horario) {
         return repository.findByHorario(horario)

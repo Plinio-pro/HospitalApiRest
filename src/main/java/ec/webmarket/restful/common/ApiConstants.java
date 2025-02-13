@@ -10,5 +10,5 @@ public final class ApiConstants {
 	public static final String URI_API_V1_PACIENTE = URI_API_V1 + "paciente";
 	public static final String URI_API_V1_ODONTOLOGO = URI_API_V1 + "odontologo";
 	public static final String URI_API_V1_HORARIO = URI_API_V1 + "horario";
-	public static final String URI_API_V1_CITA = URI_API_V1 + "CITA";
+	public static final String URI_API_V1_CITA = URI_API_V1 + "cita";
 }

@@ -42,14 +42,16 @@ public class CitaController {
 
     // Ver historial de citas de un paciente
     @GetMapping("/paciente/{pacienteId}")
-    public ResponseEntity<?> getCitasByPaciente(@PathVariable Paciente paciente) {
-        return new ResponseEntity<>(new ApiResponseDTO<>(true, citaService.findByPaciente(paciente)), HttpStatus.OK);
+    public ResponseEntity<?> getCitasByPaciente(@PathVariable Long pacienteId) {
+        return new ResponseEntity<>(new ApiResponseDTO<>(true, citaService.findByPaciente(pacienteId)), HttpStatus.OK);
     }
+
 
     // Ver historial de citas de un odontólogo
     @GetMapping("/odontologo/{odontologoId}")
-    public ResponseEntity<?> getCitasByOdontologo(@PathVariable Odontologo odontologo) {
-        return new ResponseEntity<>(new ApiResponseDTO<>(true, citaService.findByOdontologo(odontologo)), HttpStatus.OK);
+    public ResponseEntity<?> getCitasByOdontologo(@PathVariable Long odontologoId) {
+        return new ResponseEntity<>(new ApiResponseDTO<>(true, citaService.findByOdontologo(odontologoId)), HttpStatus.OK);
     }
+
 
 }
